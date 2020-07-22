@@ -1,0 +1,384 @@
+Bug log
+
+Record all bugs in mp3 project
+
+maintained by Anthony Nguyen, Hanxiao Lu, Siwei Xian and Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 
+
+File: 
+
+Bug description: 
+
+Time fix: 
+
+Fixed by:
+
+--------------------------------------------------------------------
+
+Date: 
+
+File: 
+
+Bug description: 
+
+Time fix: 
+
+Fixed by:
+
+--------------------------------------------------------------------
+
+Date: 04/29/2019
+
+File: schedule.c / terminal.c
+
+Bug description: switching terminal sometimes cause page fault / triple fault
+                 due to inconsistent terminal_execute
+
+Time fix: 2 hour
+
+Fixed by: Luotian Xu, Hanxiao Lu, Siwei Xian
+
+--------------------------------------------------------------------
+
+Date: 04/29/2019
+
+File: keyboard.c / schedule.c
+
+Bug description: pit context switch keeps returning to keyboard handler
+
+Time fix: 1 hour
+
+Fixed by: Hanxiao Lu, Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 04/29/2019
+
+File: system_call.c
+
+Bug description: kernel stack keeps growing because of faulty tss.esp0
+
+Time fix: 6 hours
+
+Fixed by: Siwei Xian, Luotian Xu, Hanxiao Lu and a nice TA
+
+--------------------------------------------------------------------
+
+Date: 04/28/2019
+
+File: terminal.c
+
+Bug description: cursor moves fast randomly while other terminals are running pingpong 
+
+Time fix: 10 minutes
+
+Fixed by: Siwei Xian, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/28/2019
+
+File: schedule.c / terminal.c
+
+Bug description: terminal_execute and other parameters not initialized
+
+Time fix: 1 hour
+
+Fixed by: Hanxiao Lu, Luotian Xu, Siwei Xian
+
+--------------------------------------------------------------------
+
+Date: 04/28/2019
+
+File: pcb.c
+
+Bug description: PCB not initialized
+
+Time fix: 4 hours
+
+Fixed by: Siwei Xian, Luotian Xu, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/27/2019
+
+File: pcb.c
+
+Bug description: deleting pcb will not update information in terminal
+
+Time fix: 20 min
+
+Fixed by: Luotian Xu, Hanxiao Lu, Siwei Xian
+
+--------------------------------------------------------------------
+
+Date: 04/27/2019
+
+File: system_call.c
+
+Bug description: the argument buffer is not cleared. 
+
+Time fix: 30 min
+
+Fixed by: Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 04/27/2019
+
+File: idt.c
+
+Bug description: System call will automatically block all interrupts.
+                 idt table for ststem call should use trap gate.
+
+Time fix: 1 hour
+
+Fixed by: Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/26/2019
+
+File: rtc.c, terminal.c
+
+Bug description: TA said fish was too slow. RTC rate was not set properly.
+                 Terminal_write was adding additional newlines in "counter" program.
+
+Time fix: 10 mins
+
+Fixed by: Anthony Nguyen
+
+--------------------------------------------------------------------
+
+Date: 04/20/2019
+
+File: rtc.c
+
+Bug description: The prep cannot work properly
+
+Time fix: 2 hour
+
+Fixed by: Luotian Xu, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/14/2019
+
+File: system_call.c
+
+Bug description: Getting Page fault when calling grep and cat
+
+Time fix: 1 week
+
+Fixed by: ALL
+
+--------------------------------------------------------------------
+
+Date: 04/14/2019
+
+File: terminal.c, lib.c, keyboard.c
+
+Bug description: Minor bug, terminal cursor not where next character output will be.
+
+Time fix: 5 mins
+
+Fixed by: Anthony Nguyen
+
+--------------------------------------------------------------------
+
+Date: 04/13/2019
+
+File: system_call.c, assembly_linkage.S 
+
+Bug description: Page faulting when calling "cat arg1" or "grep arg1". getargs and vidmap where commented out in assembly_linkage.
+                 Editor being used did not show these functions were commented out.
+
+Time fix: 30 mins
+
+Fixed by: Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/13/2019
+
+File: terminal.c, keyboard.c, lib.c
+
+Bug description: terminal cursor was not locationed where next type character would be
+
+Time fix: 5 mins
+
+Fixed by: Anthony Nguyen
+
+--------------------------------------------------------------------
+
+Date: 04/13/2019
+
+File: system_call.c
+
+Bug description: forget to update pcb->parent_pid and cause page fault
+
+Time fix: 24 hours
+
+Fixed by: all
+
+--------------------------------------------------------------------
+
+Date: 04/08/2019
+
+File: assembly_linkage.S
+
+Bug description: incorrect system call index in jump table
+
+Time fix: 1 hour
+
+Fixed by: Siwei Xian, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/08/2019
+
+File: system_call.c
+
+Bug description: incorrect return values in read/write function resulting in page fault
+
+Time fix: 30 minutes
+
+Fixed by: Siwei Xian, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/08/2019
+
+File: system_call.c
+
+Bug description: file descriptor table in pcb not initialized properly
+
+Time fix: 30 minutes
+
+Fixed by: Luotian Xu, Siwei Xian, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/08/2019
+
+File: keyboard.c
+
+Bug description: Cleared keyboard buffer before keyboard read system call
+
+Time fix: 30 minutes
+
+Fixed by: Siwei Xian, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/07/2019
+
+File: filesystem.c
+
+Bug description: context switch page fault
+
+Time fix: 6 hours
+
+Fixed by: Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 04/07/2019
+
+File: pcb.h, filesystem.h
+
+Bug description: recursively include .h file
+
+Time fix: 2 hours
+
+Fixed by: Luotian Xu, Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 04/06/2019
+
+File: filesystem.c
+
+Bug description: function read_dentry_by_name will fail if the file 
+    name is 32 byte long
+
+Time fix: 1 minute
+
+Fixed by: Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 03/24/2019
+
+File: terminal.c
+
+Bug description: terminal not printing things on screen properly
+
+Time fix: 4 hours
+
+Fixed by: Siwei Xian, Hanxiao Lu, Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 03/23/2019
+
+File: rtc.c
+
+Bug description: use ^ (xor) to do power calculation
+
+Time fix: 1 hour
+
+Fixed by: Hanxiao Lu
+
+--------------------------------------------------------------------
+
+Date: 03/10/2019
+
+File: paging.c
+
+Bug description: setting every 4KB of the first 4MB memory
+
+Time fix: 5 minutes
+
+Fixed by: Luotian Xu
+
+--------------------------------------------------------------------
+
+Date: 03/10/2019
+
+File: i8259.c
+
+Bug description: not sending eoi correct port
+
+Time fix: 1 hour
+
+Fixed by: Hanxiao Lu, Siwei Xian
+
+--------------------------------------------------------------------
+
+Date: 03/09/2019
+
+File: i8259.c
+
+Bug description: not enabling master irq2
+
+Time fix: 2 hours
+
+Fixed by: Hanxiao Lu, Siwei Xian
+
+--------------------------------------------------------------------
+
+Date: 03/09/2019
+
+File: paging.c
+
+Bug description: incorrect order of setting cr3 and cr4 register resulting crash
+
+Time fix: 4 hours
+
+Fixed by: Luotian Xu
+
+--------------------------------------------------------------------
